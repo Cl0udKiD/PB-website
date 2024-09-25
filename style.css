@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Apply box-sizing to ensure padding and border don't affect width */
+* {
+    box-sizing: border-box;
+}
+
+/* Navigation Styling */
+header {
+    background-color: black;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;  /* Added padding to create consistent clickable areas */
+    display: inline-block;  /* Ensures each item is treated as a block with padding */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Active Link Styling */
+nav ul li a.active {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+/* Button Styling */
+.discord-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #7289DA;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.discord-button:hover {
+    background-color: #5b6eae;
+}
+
+#requirements {
+    text-align: center;  /* Center the text */
+    color:white;
+}
+
+#requirements ul {
+    list-style-type: none;  /* Remove bullets */
+    padding: 0;
+}
+
+#requirements li {
+    margin: 10px 0;
+}
+
+/* Styling for the main image */
+#main-image {
+    text-align: center;
+    margin-top: 0cqmax;
+}
+
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale();
+}
+
+.main-text, .join-text, .about-text {
+    color: white;
+}
+
+.featured-image {
+    width: 100%; /* Set the width as desired */
+    height: auto;
+    mask-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%), /* Bottom fade */
+    linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%); /* Top fade */
+    /* For older browsers */
+    -webkit-mask-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: destination-out;
+}   
+
+/* Gallery Styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px;
+    padding: 20px;
+}
+
+.gallery .img-container {
+    width: 100%;           /* Full width of the grid cell */
+    height: 100%;        /* Fixed height for all image containers */
+    max-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;     /* Hide overflow to maintain uniformity */
+}
+
+.gallery img {
+    width: 100%;      /* Ensure image does not exceed container width */
+    height: 100%; 
+    object-fit: cover;  /* Ensure image does not exceed container height */
+    display: block;        /* Removes bottom space under image */
+    margin: auto;          /* Center the image within the container */
+    border: 4px solid #ddd; /* Border around the image */
+    border-radius: 5px;    /* Optional: rounded corners for the border */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
+    }
+}
