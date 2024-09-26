@@ -1,21 +1,31 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('Alycidon-Condensed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: black;
-    border-width: 2px;
-    border-style: solid;
-    border-color: white;
     display: flex;
     flex-direction: column;
 }
 
-header {
-    background-color: #333;
-    padding: 10px 0;
+body.gallery { 
+    display: flex;
+    flex-direction: column;
 }
 
+body.join {
+    background-image: url("images/join__bg.png");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size:cover; /* Scales the image to fit within the body */
+    background-position: center; /* Centers the image */
+}
 
 footer {
     color: white;
@@ -32,7 +42,15 @@ footer {
 /* Navigation Styling */
 header {
     background-color: black;
-    padding: 10px 0;
+    padding: 10px;
+    margin: 0 auto;
+    position: fixed; /* Fixes the header at the top */
+    top: 1%;         /* Aligns it to the top */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border: 2px white solid;
+    border-radius: 20px;
 }
 
 nav ul {
@@ -70,13 +88,13 @@ nav ul li a.active {
 
 
 main {
-    padding: 20px;
     text-align: center;
     flex: 1;
 }
 
 /* Button Styling */
 .discord-button {
+    margin-top: 30px;
     display: inline-block;
     padding: 10px 20px;
     color: white;
@@ -88,7 +106,7 @@ main {
 
 .paypal-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 20px 30px;
     color: white;
     background-color: #7289DA;
     text-decoration: none;
@@ -103,16 +121,46 @@ main {
 
 #requirements {
     text-align: center;  /* Center the text */
-    color:white;
+    width: 30vw;
+    margin: 0 auto;
+    color: white;
+}
+
+#discord {
+    color: white;
+    margin-top: 30px;
+}
+
+.join-container {
+    padding: 20px;
+    background-color: black;
+    width: 30vw;
+    border: 2px white solid;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
 #requirements ul {
-    list-style-type: none;  /* Remove bullets */
+    list-style-type: disc;
+    list-style-type: none;
+    color: white;
     padding: 0;
+    color:white;
+    padding-left: 0; 
+    max-width: 500px;
+    margin: auto;
 }
 
 #requirements li {
     margin: 10px 0;
+    align-items: center;
+}
+
+#requirements li::before {
+    content: '•'; /* Custom bullet */
+    color: white; /* Bullet color */
+    margin-right: 10px; /* Space between bullet and text */
 }
 
 /* Styling for the main image */
@@ -124,11 +172,30 @@ main {
 .featured-image {
     max-width: 100%;
     height: auto;
+    margin-top: 100px;
     filter: grayscale();
 }
 
 .main-text, .join-text, .about-text, .donate-text {
     color: white;
+}
+
+.donate-text {
+    max-width: 600px; 
+    line-height: 1.6; 
+    margin:0 auto;
+    margin-top: 100px;
+}
+
+.donate-text h1 {
+    margin-bottom: 15px; 
+}
+
+.join-text {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+
 }
 
 .featured-image {
@@ -151,6 +218,7 @@ main {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 10px;
     padding: 20px;
+    margin-top: 30px;
 }
 
 .gallery .img-container {
@@ -195,21 +263,22 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10vw;
-    padding: 20px;
+    padding-bottom: 10vh;
 }
 
 .item {
     text-align: center;
     color: white;
-    width: 230px;
-    height: 230px;
-    border: white 2px solid;
-    border-radius: 10%;
+    width: 250px;
+    height: 250px;
+    /* border: white 2px solid;
+    border-radius: 10%; */
 }
 
 .item img {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
+    border: rgb(180, 3, 3) 5px solid;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -251,13 +320,62 @@ body {
     margin-bottom: 20px;
 }
 
+.peaky-blinders h2 {
+    font-size: 40px;
+}
+
+.peaky-blinders h1 {
+    font-family: 'CustomFont';
+    word-spacing: 10px;
+    font-size: 150px;
+    font-weight: 200;
+}
+
 .peaky-blinders h3 {
     text-align: left;
+    max-width: 500px;
     margin: 20px 0 10px;
+    margin: 20px auto;
 }
 
 .peaky-blinders p {
     text-align: left;
     line-height: 1.6;
+    max-width: 500px;
+    margin: auto;
     margin-bottom: 20px;
+}
+
+.about-text {
+    width: 50vw;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.donate-img {
+    width: 100%;
+    min-height: 70vh;
+    overflow: hidden; /* Hide overflow for centering effect */
+    position: relative; /* Position relative for the absolute positioning of the image */
+}
+
+.donate-img img {
+    position: absolute;         /* Allow positioning inside the container */
+    top: 50%;                  /* Center vertically */
+    left: 50%;                 /* Center horizontally */
+    min-width: 100%;           /* Minimum width to cover the container */
+    min-height: 100%;          /* Minimum height to cover the container */
+    width: auto;               /* Auto width to maintain aspect ratio */
+    height: auto;              /* Auto height to maintain aspect ratio */
+    transform: translate(-48%, -50%); /* Center the image */
+    filter: grayscale(); /* Apply grayscale filter (1 = 100% grayscale) */
+    mask-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%), 
+    linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%); 
+    -webkit-mask-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 80%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(109, 80, 80, 0) 80%);
+    mask-composite: intersect;
+    -webkit-mask-composite: destination-in;
 }
