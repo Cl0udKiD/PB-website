@@ -27,6 +27,13 @@ body.join {
     background-position: center; /* Centers the image */
 }
 
+body.donate {
+    background-image: url("images/join__bg.png");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size:cover; /* Scales the image to fit within the body */
+    background-position: center; /* Centers the image */
+}
+
 footer {
     color: white;
     text-align: center;
@@ -106,7 +113,7 @@ main {
 
 .paypal-button {
     display: inline-block;
-    padding: 20px 30px;
+    padding: 10px 20px;
     color: white;
     background-color: #7289DA;
     text-decoration: none;
@@ -122,6 +129,7 @@ main {
 #requirements {
     text-align: center;  /* Center the text */
     width: 30vw;
+    min-width: 200px;
     margin: 0 auto;
     color: white;
 }
@@ -182,10 +190,15 @@ main {
 }
 
 .donate-text {
-    max-width: 600px; 
+    width: 30vw;
+    min-width: 350px; 
     line-height: 1.6; 
     margin:0 auto;
     margin-top: 100px;
+    background-color: black;
+    border: 2px white solid;
+    border-radius: 20px;
+    padding:20px;
 }
 
 .donate-text h1 {
@@ -246,6 +259,26 @@ main {
 @media (max-width: 600px) {
     .gallery {
         grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px 10px;  /* Added padding to create consistent clickable areas */
+        display: inline-block;  /* Ensures each item is treated as a block with padding */
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Active Link Styling */
+    nav ul li a.active {
+        background-color: white;
+        color: black;
+        padding: 10px 10px;
+        border-radius: 5px;
     }
 }
 
