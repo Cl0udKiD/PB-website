@@ -86,6 +86,17 @@ main {
     font-size: 18px;
 }
 
+.paypal-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #7289DA;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
 .discord-button:hover {
     background-color: #5b6eae;
 }
@@ -116,7 +127,7 @@ main {
     filter: grayscale();
 }
 
-.main-text, .join-text, .about-text {
+.main-text, .join-text, .about-text, .donate-text {
     color: white;
 }
 
@@ -167,4 +178,86 @@ main {
     .gallery {
         grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
     }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.avatar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10vw;
+    padding: 20px;
+}
+
+.item {
+    text-align: center;
+    color: white;
+    width: 230px;
+    height: 230px;
+    border: white 2px solid;
+    border-radius: 10%;
+}
+
+.item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.item p {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.avatars {
+    color: white;
+    margin-top: 5vh;
+}
+
+.avatars h1 {
+    font-size: 60px;
+}
+
+.item>p {
+    font-size: 20px;
+}
+
+.peaky-blinders {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: white;
+}
+
+.peaky-blinders h1,
+.peaky-blinders h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.peaky-blinders h3 {
+    text-align: left;
+    margin: 20px 0 10px;
+}
+
+.peaky-blinders p {
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
